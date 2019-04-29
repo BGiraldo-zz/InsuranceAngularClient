@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+.container{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.container input{
+    margin: 10px;
+    border-radius: 5px;
+    flex: 60%;
+    width: 300px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    margin: 10px;
+}
+
+.buttons button{
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.message{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
