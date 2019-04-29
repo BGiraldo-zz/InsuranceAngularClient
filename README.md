@@ -1,27 +1,19 @@
-# InsuranceClient
+**Welcome to this Project, Remember we have two clients, AspNet MVC that has more development and aside Angular with Asp Net Web API**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
+**Insurance angular client project is using**
 
-## Development server
+1. HttpClient.
+2. Reactive Forms.
+3. Asp Net API as Backend having a communication by Rest Services
+4. CSS, JS, HTML5
+5. ...
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**Insurance AspNet MVC Projetc HERE: https://github.com/BGiraldo/InsuranceProject.git**
 
-## Code scaffolding
+Check that it works according to the attached PDF Document. Have in account some functionalities don't are complete
+because most time was inverted on AspNet MVC project.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Thanks,
+Regards,
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Brayan Giraldo
