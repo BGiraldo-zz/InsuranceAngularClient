@@ -10,6 +10,8 @@
 
 **Insurance AspNet MVC Projetc HERE: https://github.com/BGiraldo/InsuranceProject.git**
 
+**Note:** To run this app please install first the node_modules with command **npm i** on the source folder.
+
 Check that it works according to the attached PDF Document. Have in account some functionalities don't are complete
 because most time was inverted on AspNet MVC project.
 
