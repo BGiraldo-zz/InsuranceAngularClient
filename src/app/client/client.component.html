@@ -1,42 +1,61 @@
-<div class="container">
+<div class="padre">
 
-  <h1>Client Management</h1>
+  <div class="hijo">
 
-  <hr />
-  
-  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="container">
+    <h1>Client Management</h1>
 
-    <input type="number" formControlName="identification" required placeholder="Identification">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="example-form">
 
-    <input type="text" formControlName="completeName" placeholder="Complete Name">
+      <mat-form-field class="example-full-width">
+        <input matInput type="number" formControlName="identification" required placeholder="Identification">
+      </mat-form-field>
 
-    <input type="text" formControlName="address" placeholder="Address">
+      <mat-form-field class="example-full-width">
+        <input matInput type="text" formControlName="completeName" required placeholder="Complete Name">
+      </mat-form-field>
 
-    <input type="number" formControlName="phone" placeholder="Phone">
+      <mat-form-field class="example-full-width">
+        <input matInput type="text" formControlName="address" required placeholder="Address">
+      </mat-form-field>
 
-    <input type="email" formControlName="email" placeholder="Email">
+      <mat-form-field class="example-full-width">
+        <input matInput type="number" formControlName="phone" required placeholder="Phone">
+      </mat-form-field>
 
-  </form>
+      <mat-form-field class="example-full-width">
+        <input matInput type="email" formControlName="email" required placeholder="Email">
+      </mat-form-field>
+
+    </form>
+
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="add()">Save</button>
+      <button mat-raised-button disabled (click)="search()" [disabled]=true>Search</button>
+      <button mat-raised-button disabled (click)="update()" [disabled]=true>Update</button>
+      <button mat-raised-button disabled (click)="remove()" [disabled]=true>Remove</button>
+      <button mat-raised-button color="primary" (click)="list()">List</button>
+    </div>
+
+  </div>
+
 
 </div>
 
-<div class="buttons">
-  <button (click)="add()">Save</button>
-  <button (click)="search()" [disabled]=true>Search</button>
-  <button (click)="update()" [disabled]=true>Update</button>
-  <button (click)="remove()" [disabled]=true>Remove</button>
-  <button (click)="list()">List</button>
-</div>
-
-<hr>
+<br/><hr/><br/>
 
 <h3 *ngIf="clients[0]!=null">Client list</h3>
 
-    <table *ngIf="clients[0]!=null" border="2px">
-      <th>Identification</th>
-      <th>Complete Name</th>
-        <tr *ngFor="let client of clients"  (click)="onSelect(client)">
-            <td> {{ client.Identification }} </td>
-            <td> {{ client.CompleteName }}</td>
-        </tr>
-    </table>
+<table mat-table *ngIf="clients[0]!=null" border="2px">
+  <th mat-header-cell>Identification</th>
+  <th mat-header-cell>Complete Name</th>
+  <th mat-header-cell>Address</th>
+  <th mat-header-cell>Phone</th>
+  <th mat-header-cell>Email</th>
+  <tr mat-row *ngFor="let client of clients" (click)="onSelect(client)">
+    <td mat-cell> {{ client.Identification }} </td>
+    <td mat-cell> {{ client.CompleteName }}</td>
+    <td mat-cell> {{ client.Address }}</td>
+    <td mat-cell> {{ client.Phone }}</td>
+    <td mat-cell> {{ client.Email }}</td>
+  </tr>
+</table>

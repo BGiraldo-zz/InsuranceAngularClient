@@ -44,6 +44,15 @@ export class PolicyComponent {
   }
 
   add() {
+
+    var riskType = this.profileForm.get('riskType').value;
+    var coverage = this.profileForm.get('coverage').value;
+
+    if(riskType === 'Alto' && coverage >= 50){
+      alert("This case the risk is high therefore the coverage must be less than 50%.");
+      return;
+    }
+
     if (!this.profileForm.invalid) {
 
       this.policy.Name = this.profileForm.get('name').value;
@@ -57,6 +66,7 @@ export class PolicyComponent {
       this.policyService.add(this.policy).subscribe(data => {
         console.log(data);
         this.policy = new Policy();
+        alert("Register Successful !!");
       });
     }
   }

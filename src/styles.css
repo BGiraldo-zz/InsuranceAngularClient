@@ -1,31 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
-.container{
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
     display: flex;
-    flex-flow: column nowrap;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+header, footer {
+    padding: 30px;
+    background-color:#3F51B5;
+}
+
+.body{
+    flex: 1;
+    padding: 20px;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 8px;
+  }
+
+  .padre {
+    height: 400px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-}
+  }
+  
+  .hijo {
+    width: 500px;
+  }
 
-.container input{
-    margin: 10px;
-    border-radius: 5px;
-    flex: 60%;
-    width: 300px;
-}
-
-.buttons{
-    display: flex;
-    justify-content: center;
-    flex-flow: row nowrap;
-    margin: 10px;
-}
-
-.buttons button{
-    border-radius: 5px;
-    margin: 10px;
-}
-
-.message{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+  .example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
 }

@@ -50,6 +50,7 @@ export class ClientComponent {
       this.clientService.add(this.client).subscribe(data => {
         console.log(data);
         this.client = new Client();
+        alert("Register Successful !!");
       });
     }
   }

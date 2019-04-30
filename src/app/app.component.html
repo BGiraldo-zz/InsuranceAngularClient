@@ -1,13 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
 
-<button routerLink="/client">Client Management</button>
-<button routerLink="/policy">Policy Management</button>
-<button routerLink="/client-policy">Assingn|Cancel Policy</button>
+<div class="container">
 
+    <header>
+        <mat-toolbar>
+          <button mat-stroked-button color="primary" routerLink="/client">Client Management</button>
+          <button mat-stroked-button color="primary" routerLink="/policy">Policy Management</button>
+          <button mat-stroked-button color="primary" routerLink="/client-policy">Assingn|Cancel Policy</button>
+        </mat-toolbar>
+      </header>
+      
+      <div class="body">
+            <router-outlet></router-outlet>
+      </div>
+      
+      <footer></footer>
+      
 </div>
 
-<router-outlet></router-outlet>
+
+

@@ -1,38 +1,47 @@
-<div class="container">
+<div class="padre">
+
+  <div class="hijo">
 
     <h1>Assign|Cancel Policy</h1>
-  
-    <hr />
-    
-    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="container">
-      
-      <input type="number" formControlName="policyId" required placeholder="policy Id">
-  
-      <input type="text" formControlName="clientId" placeholder="Client Id">
-  
-      <input type="checkbox" formControlName="status" placeholder="Status">
-  
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="example-form">
+
+      <mat-form-field class="example-full-width">
+          <select matNativeControl required formControlName="policyId" placeholder="Policy">
+          </select>
+        </mat-form-field>
+        
+      <mat-form-field class="example-full-width">
+          <select matNativeControl required formControlName="clientId" placeholder="Customer">
+          </select>
+        </mat-form-field>
+
+      <mat-checkbox formControlName="status" placeholder="Status">Status</mat-checkbox>
+
+      <div style="padding-bottom: 10px"></div>
     </form>
-  
-  </div>
-  
-  <div class="buttons">
-    <button (click)="add()">Save</button>
-    <button (click)="search()" [disabled]=true>Search</button>
-    <button (click)="update()" [disabled]=true>Update</button>
-    <button (click)="remove()" [disabled]=true>Remove</button>
-    <button (click)="list()">List</button>
+
+    <div class="example-button-row">
+      <button mat-raised-button disabled (click)="add()">Save</button>
+      <button mat-raised-button disabled (click)="search()" [disabled]=true>Search</button>
+      <button mat-raised-button disabled (click)="update()" [disabled]=true>Update</button>
+      <button mat-raised-button disabled (click)="remove()" [disabled]=true>Remove</button>
+      <button mat-raised-button disabled (click)="list()">List</button>
+    </div>
+
   </div>
 
-  <h3 *ngIf="details[0]!=null">Policy list</h3>
+</div>
 
-    <table *ngIf="details[0]!=null" border="2px">
-      <th>ID</th>
-      <th>Policy Name</th>
-      <th>Customer Name</th>
-        <tr *ngFor="let policy of details"  (click)="onSelect(policy)">
-            <td> {{ policy.PolicyId }} </td>
-            <td> {{ policy.PolicyName }} </td>
-            <td> {{ policy.CustomerName }}</td>
-        </tr>
-    </table>
+<h3 *ngIf="details[0]!=null">Policy list</h3>
+
+<table *ngIf="details[0]!=null" border="2px">
+  <th>ID</th>
+  <th>Policy Name</th>
+  <th>Customer Name</th>
+  <tr *ngFor="let policy of details" (click)="onSelect(policy)">
+    <td> {{ policy.PolicyId }} </td>
+    <td> {{ policy.PolicyName }} </td>
+    <td> {{ policy.CustomerName }}</td>
+  </tr>
+</table>

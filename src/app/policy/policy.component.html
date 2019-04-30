@@ -1,60 +1,92 @@
-<div class="container">
+<div class="padre container">
+
+  <div class="hijo">
 
     <h1>Policy Management</h1>
-  
-    <hr />
-    
-    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="container">
 
-      <input type="text" formControlName="name" required placeholder="Name">
-  
-      <input type="text" formControlName="description" placeholder="Description">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="example-form">
 
-      <select type="text" formControlName="coveringType" placeholder="Covering Type"> 
+      <mat-form-field class="example-full-width">
+        <input matInput type="text" formControlName="name" required placeholder="Name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput required type="text" formControlName="description" placeholder="Description">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <select matNativeControl required formControlName="coveringType" placeholder="Covering Type">
           <option value="Terremoto">Terremoto</option>
           <option value="Robo">Robo</option>
           <option value="Incendio">Incendio</option>
           <option value="Perdida">Perdida</option>
-      </select>
-  
-      <input type="number" formControlName="coverage" placeholder="Coverage">
-  
-      <input type="datetime" formControlName="termBeginning" placeholder="Term of the policy">
+        </select>
+      </mat-form-field>
 
-      <input type="number" formControlName="coverageOnMonths" placeholder="Coverage On Months">
+      <mat-form-field class="example-full-width">
+        <input matInput required  type="number" formControlName="coverage" placeholder="Coverage">
+      </mat-form-field>
 
-      <input type="number" formControlName="price" placeholder="Price">
+      <mat-form-field class="example-full-width">
+        <input matInput required  [matDatepicker]="picker" placeholder="Choose a date" formControlName="termBeginning">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
 
-      <select type="text" formControlName="riskType" placeholder="Risk Type"> 
+      <mat-form-field class="example-full-width">
+        <input matInput required  type="number" formControlName="coverageOnMonths" placeholder="Coverage On Months">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput required  type="number" formControlName="price" placeholder="Price">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <select matNativeControl required formControlName="riskType" placeholder="Risk Type">
           <option value="Bajo">Bajo</option>
           <option value="Medio">Medio</option>
           <option value="MedioAlto">MedioAlto</option>
           <option value="Alto">Alto</option>
-      </select>
-  
+        </select>
+      </mat-form-field>
+
     </form>
-  
-  </div>
-  
-  <div class="buttons">
-    <button (click)="add()">Save</button>
-    <button (click)="search()" [disabled]=true>Search</button>
-    <button (click)="update()" [disabled]=true>Update</button>
-    <button (click)="remove()" [disabled]=true>Remove</button>
-    <button (click)="list()">List</button>
+
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="add()">Save</button>
+      <button mat-raised-button disabled (click)="search()" [disabled]=true>Search</button>
+      <button mat-raised-button disabled (click)="update()" [disabled]=true>Update</button>
+      <button mat-raised-button disabled (click)="remove()" [disabled]=true>Remove</button>
+      <button mat-raised-button color="primary" (click)="list()">List</button>
+    </div>
+
   </div>
 
-  <hr>
+</div>
+
+<br/><hr/><br/>
 
 <h3 *ngIf="policies[0]!=null">Policy list</h3>
 
-    <table *ngIf="policies[0]!=null" border="2px">
-      <th>ID</th>
-      <th>Policy Name</th>
-      <th>Description</th>
-        <tr *ngFor="let policy of policies"  (click)="onSelect(policy)">
-            <td> {{ policy.PolicyId }} </td>
-            <td> {{ policy.Name }} </td>
-            <td> {{ policy.Description }}</td>
-        </tr>
-    </table>
+<table mat-table *ngIf="policies[0]!=null" border="2px">
+  <th mat-header-cell>ID</th>
+  <th mat-header-cell>Policy Name</th>
+  <th mat-header-cell>Description</th>
+  <th mat-header-cell>Covering Type</th>
+  <th mat-header-cell>Coverage</th>
+  <th mat-header-cell>Term Beginning</th>
+  <th mat-header-cell>CoverageOnMonths</th>
+  <th mat-header-cell>Price</th>
+  <th mat-header-cell>RiskType</th>
+  <tr mat-row *ngFor="let policy of policies" (click)="onSelect(policy)">
+    <td mat-cell> {{ policy.PolicyId }} </td>
+    <td mat-cell> {{ policy.Name }} </td>
+    <td mat-cell> {{ policy.Description }}</td>
+    <td mat-cell> {{ policy.CoveringType }}</td>
+    <td mat-cell> {{ policy.Coverage }}</td>
+    <td mat-cell> {{ policy.TermBeginning }}</td>
+    <td mat-cell> {{ policy.CoverageOnMonths }}</td>
+    <td mat-cell> {{ policy.Price }}</td>
+    <td mat-cell> {{ policy.RiskType }}</td>
+  </tr>
+</table>

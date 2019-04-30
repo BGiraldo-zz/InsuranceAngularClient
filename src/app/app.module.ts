@@ -5,6 +5,17 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+
+import { MatMenuModule } from '@angular/material/menu';
+import { MatInputModule } from '@angular/material/input';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {
+  MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule
+  , MatToolbarModule, MatFormFieldModule, MatSelectModule
+} from '@angular/material';
+
 //Components
 import { AppComponent } from './app.component';
 import { PolicyComponent } from './policy/policy.component';
@@ -27,7 +38,17 @@ import { ClientPolicyService } from './shared/services/client-policy.service';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatMenuModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [ClientService, PolicyService, ClientPolicyService, HttpClient],
   bootstrap: [AppComponent]
