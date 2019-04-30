@@ -6,7 +6,7 @@
 2. Reactive Forms.
 3. Asp Net API as Backend having a communication by Rest Services
 4. CSS, JS, HTML5
-5. ...
+5. Angular Material
 
 **Insurance AspNet MVC Projetc HERE: https://github.com/BGiraldo/InsuranceProject.git**
 
